@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id="checkoutcontainer">
+        <div id='checkout'>
+            <p style="font-weight:bold;margin-bottom: 10px;">Please review your order:</p>
+            <div class="productcart">
+                <div id="shoppingcartheader">
+                    <span id='shoppingcartimg'></span>
+                    <span id='shoppingcartname'>Product</span>
+                    <span id='shoppingcartqty'>Quantity</span>
+                    <span id='shoppingcartprice'>Price</span>
+                    <span id='shoppingcartremove'></span>
+                </div>
+
+
+                <form method='post' action='/checkout'>
+                    <fieldset>
+                        <div id="shoppingcartrow">
+                            <span id='shoppingcartimg'> </span>
+                            <span id='shoppingcartname'>Ivan</span>
+                            <span id='shoppingcartqty'>
+      <!--Should have a qty error flash-->
+			<input type='text' size='2' id='cart_item_id_5' name='itemqty' value='1' />
+			<input type='submit' name='update_cart' value='Update' class='cart-button' />
+			</span>
+                            <span id='shoppingcartprice'>&#036;3.99</span>
+                            <span id='shoppingcartremove'>
+			<a class='cart-remove' href='?cart_remove=5'>Remove</a>
+			</span>
+                            <input type='hidden' name='itemname' value='Ivan' />
+                            <input type='hidden' name='itemid' value='5' />
+                            <div class="clear"></div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+            <span id='sfcart_subtotal'>Subtotal: <strong>&#36; 3.99</strong><br/></span><div class='clear'></div><span id='sfcart_shipping'>Shipping: <strong>&#36; 0.00</strong><br/></span><div class='clear'></div><span id='sfcart_tax'>Tax (0%): <strong>&#36; 0.00</strong><br/></span><div class='clear'></div><span id='sfcart_total'>Total: <strong>&#36; 3.99</strong><br/></span></div>
+
+{% endblock %}
